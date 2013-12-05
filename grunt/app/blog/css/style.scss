@@ -1,0 +1,259 @@
+@font-face {
+    font-family: 'learning_curve_proregular';
+    src: url('../fonts/learningcurvepro/LearningCurve_OT-webfont.eot');
+    src: url('../fonts/learningcurvepro/LearningCurve_OT-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/learningcurvepro/LearningCurve_OT-webfont.woff') format('woff'),
+         url('../fonts/learningcurvepro/LearningCurve_OT-webfont.ttf') format('truetype'),
+         url('../fonts/learningcurvepro/LearningCurve_OT-webfont.svg#learning_curve_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'archisticobold';
+    src: url('../fonts/archistico_bold_macroman/Archistico_Bold-webfont.eot');
+    src: url('../fonts/archistico_bold_macroman/Archistico_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/archistico_bold_macroman/Archistico_Bold-webfont.woff') format('woff'),
+         url('../fonts/archistico_bold_macroman/Archistico_Bold-webfont.ttf') format('truetype'),
+         url('../fonts/archistico_bold_macroman/Archistico_Bold-webfont.svg#archisticobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'calligraffitiregular';
+    src: url('../fonts/calligraffiti_regular_macroman/Calligraffiti-webfont.eot');
+    src: url('../fonts/calligraffiti_regular_macroman/Calligraffiti-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/calligraffiti_regular_macroman/Calligraffiti-webfont.woff') format('woff'),
+         url('../fonts/calligraffiti_regular_macroman/Calligraffiti-webfont.ttf') format('truetype'),
+         url('../fonts/calligraffiti_regular_macroman/Calligraffiti-webfont.svg#calligraffitiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-size-base:             16px;
+
+$screen-xs:                  480px !default;
+$screen-phone:               $screen-xs !default;
+
+// Small screen / tablet
+$screen-sm:                  768px !default;
+$screen-tablet:              $screen-sm !default;
+
+// Medium screen / desktop
+$screen-md:                  992px !default;
+$screen-desktop:             $screen-md !default;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px !default;
+$screen-lg-desktop:          $screen-lg !default;
+
+$link-color: #2E80B8;
+// $link-color: darken(#3A67C2, 3%);
+$text-color: #444;
+
+
+@mixin font-type{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+@mixin font-size($multiplyer){
+    font-size: floor($font-size-base * $multiplyer);
+}
+
+
+.header-large{
+
+background-image:url('../imgs/grid4-dark.png');
+background-color: #333333;
+}
+
+.header h4{
+    line-height: 60px !important;
+    margin-top: 10px;
+    color: #F47E06;
+    text-align: right
+}
+
+body{
+    text-align: center;
+    @include font-type; 
+    @include font-size(1); 
+    color: #444;
+}
+
+.copy, .date{
+    @include font-type; 
+    color: $text-color;
+}
+
+.right-column{
+    margin-top: 20px;
+    padding-left: 20px;
+    @media all and (max-width: $screen-md){
+        padding-left: 0;
+    }
+}
+
+
+h1, h2, h3, h4, h5{
+    font-family: archisticobold, 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+h1, .h1 { @include font-size(3); } // ~36px
+h2, .h2 { @include font-size(2.5); } // ~30px
+h3, .h3 { @include font-size(2); } // ~24px
+h4, .h4 { @include font-size(1.25); } // ~18px
+h5, .h5 { @include font-size(1); }
+h6, .h6 { @include font-size(0.85);} // ~12px
+
+.thin{
+    font-weight: 200;
+
+}
+
+p{
+    margin-bottom: 20px;
+}
+
+
+.dialogue{
+    background-color: white;
+    padding: 2%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    vertical-align: middle;
+    font-size: 16px;
+    color: #666;
+
+    @media all and (max-width: $screen-md){
+        font-size: 18px;
+    }
+}
+
+.dialogue-container{
+    text-align: right;
+    display: inline-block;
+    width: 60%;
+
+    @media all and (max-width: $screen-md){
+        width: 80%;
+    }
+
+    @media all and (max-width: $screen-xs){
+        width: 70%;
+    }
+
+    .profile-pic-container + &{
+        text-align: left;
+        margin-right: 0;
+    }
+
+}
+
+.profile-pic-container{
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    min-width: 120px;
+    @media all and (max-width: $screen-md){
+        width: 10%;
+        min-width: 60px;
+    }
+
+    @media all and (max-width: $screen-xs){
+        width: 20%;
+        min-width: 60px;
+    }
+}
+
+
+.profile-pic{
+    vertical-align: middle;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    height: 140px;
+
+    @media all and (max-width: $screen-md){
+        height: 70px;
+    }
+}
+
+
+
+
+.dialogue + .rounded-border, .rounded-border + .dialogue{
+    margin-left: 2%;
+}
+
+// .rounded-border{
+// border-radius: 80px; 
+// border: 1px solid rgba(0, 124, 167, 0.2);
+// display: inline-block; 
+// padding: 0px;
+// overflow: hidden;
+// line-height: normal;
+// padding: 2px;
+
+// }
+
+// .profile-pic{
+//     -webkit-box-shadow: 1px 1px 4px #CCCCCC; 
+//     -moz-box-shadow: 1px 1px 4px #CCCCCC; 
+//     box-shadow: 1px 1px 4px #CCCCCC; 
+//     vertical-align: middle;
+//     -moz-background-clip: padding;
+//     -webkit-background-clip: padding-box;
+//     background-clip: padding-box;
+//     height: 40px;
+//     width: 40px;
+// }
+
+
+.title{
+    color: $link-color;
+}
+
+
+a.blog-title, a.blog-title:hover{
+    text-decoration: none;
+
+}
+
+a{
+    color: $link-color;
+
+}
+
+a.blog-title > h4 {
+    font-family: calligraffitiregular, cursive
+}
+
+
+a:hover{
+    text-decoration: underline;
+}
+
+[class*="span"] {
+    text-align: left;
+}
+
+.title{
+    margin-bottom: 20px;
+}
+
+.block {
+    float: left;
+    height: 200px;
+    margin-right: 20px;
+    width: 200px;
+}
+
+
+

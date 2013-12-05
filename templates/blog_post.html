@@ -1,0 +1,35 @@
+{% extends "container.html" %}
+
+{% block central_content %}
+<h1 class="title">{{ page.title }}</h1>
+
+<div style="text-align: left">
+{{ page.tease_html|safe }}
+{% if page.tease_img %}
+<img class="img-responsive" src="{{ page.tease_img.src }}" alt="{{ page.tease_img.alt }}">
+{% endif %}
+
+<p>
+    {{ page.html|safe }}
+</p>
+<h5  class="date pull-right blog-container">- {{ page.published.strftime('%d %b %Y') }}</h5>
+
+</div>
+{% endblock central_content %}
+
+
+{% block right_content %}
+{% if page.discussions %}
+<h4 class="title">
+FAQ
+</h4>
+
+
+{% for discussion in page.discussions %}
+{% include "right-side.html" %}
+{% endfor %}
+
+{% endif %}
+{% endblock right_content %}
+
+

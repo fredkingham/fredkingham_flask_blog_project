@@ -1,0 +1,49 @@
+{% extends "container.html" %}
+
+
+
+{% block central_content %}
+    {% for post in posts %}
+    <div>
+      <a class="blog-title" href="{{ url_for('page', path=post.path) }}">
+      <h2 class="title">
+      {{ post.title_html|safe }}
+      </h2>
+      </a>
+      <p class="tease">{{ post.tease_html|safe }}</p>
+
+    </div>
+    {% if post.tease_img %}
+    <div class="row">
+    <img class="img-responsive" src="{{ post.tease_img.src }}" alt="{{ post.tease_img.alt }}">
+    </div>
+    {% endif %}
+
+
+    <div class="row">
+      <h5 style="display: inline" class="pull-right date">- {{ post.published.strftime('%d %b %Y') }}</h5>
+  </div>
+    {% endfor %} 
+
+{% endblock central_content %}
+
+{% block right_content %}
+{% if generic_discussion %}
+<h4 class="title">
+FAQ
+</h4>
+{% for discussion in generic_discussion %}
+{% include "right-side.html" %}
+{% endfor %}
+{% endif %}
+
+{% endblock right_content %}
+
+
+{% block footer %}
+
+<a href="{{ url_for('recent_feed') }}">RSS</a> -
+<a href="http://twitter.com/fredkingham">twitter</a>
+{% endblock footer %}
+
+

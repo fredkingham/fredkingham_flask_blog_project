@@ -1,0 +1,27 @@
+<div style="margin-bottom: 30px;" class="row">
+{% if discussion.is_me %}
+<div class="dialogue-container">
+<div class="dialogue">
+    {{ discussion.text|safe }}
+</div></div>
+
+<div class="profile-pic-container">
+<div class="rounded-border">
+<img class="profile-pic" alt="Fred" src="{{ url_for('static', filename='imgs/blog_pics/fred.jpg') }}">
+</div>
+</div>
+
+{% else %}
+<div class="profile-pic-container">
+<div class="rounded-border">
+<img alt="Monster" class="profile-pic" src="{{ url_for('static', filename='imgs/blog_pics/monster.jpg') }}">
+</div>
+</div>
+
+<div class="dialogue-container">
+<div class="dialogue">
+    {{ discussion.text|safe }}
+</div>
+</div>
+{% endif %}
+</div>

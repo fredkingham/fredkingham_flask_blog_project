@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<div class="row">
+<div class="col-md-8">
+{% block central_content %}
+{% endblock central_content %}
+
+
+</div>
+
+<div class="col-md-4 right-column blog-container">
+{% block right_content %}
+{% endblock right_content %}
+
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-md-8">
+{% block footer %}
+{% endblock footer %}
+</div>
+</div>
+
+
+{% endblock content %}
