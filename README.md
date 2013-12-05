@@ -1,6 +1,3 @@
-This is currently deprecated until I can update the project to work with the latest version of brunch
+My blog
 
-django-simple-project
-=====================
-
-simple project comes packing knockout and css reset
+to set up run grunt build and grunt combine, it can then be run from ./routes.py
